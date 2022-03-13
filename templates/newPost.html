@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+{% block body %} 
+<b><p class="text-center">Create New Post</p></b>
+<form action='/allposts' method='post'>
+<div class="mb-3 container">
+  <label for="exampleFormControlInput1" class="form-label">Title</label>
+  <input type="text" name='title' class="form-control" id="exampleFormControlInput1" placeholder="What's on your mind" required>
+</div>			
+<div class="mb-3 container">
+  <label  for="exampleFormControlTextarea1" class="form-label">Author</label>
+  <input type='text' name='author' class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="author">
+</div>
+<div class="mb-3 container">
+  <label  for="exampleFormControlTextarea1" class="form-label">content</label>
+  <textarea name='content' class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Describe ypur content..." required></textarea>
+<input type="submit" value="post" class="btn btn-success my-2 mx-3 "/>
+</form>
+
+{% endblock %}

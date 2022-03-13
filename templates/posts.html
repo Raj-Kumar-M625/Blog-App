@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block body %} 
+<h1 class="text-center">All Posts</h1>
+
+<hr><a href="/posts/newpost" class="btn btn-primary mx-5">+New Post</a></p>
+
+{% for post in posts%}
+<div><b>Title</b> : {{post.title}}</div>
+{% if post.author=="" %}
+<div><b>Author</b> : Unknown</div>
+{% else %}
+<div><b>Author</b> : {{post.author}}</div>
+{% endif %}
+<div><b>Content</b> : {{post.content}}</div>
+<div><b>Date</b> : {{post.post_date}}</div>
+<a class="btn btn-danger" href="/posts/delete/{{post.id}}" >Delete</a>
+<a class="btn btn-primary mx-2"  href="/posts/edit/{{post.id}}">Edit</a>
+
+<hr>
+{% endfor %}
+{% endblock %}

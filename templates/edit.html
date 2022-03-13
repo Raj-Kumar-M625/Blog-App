@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{%  block body %}
+
+<h1 class="text-center my-3">Edit Posts</h1>
+<form action='/posts/edit/{{post.id}}' method="POST">
+<div class="mb-3 container">
+  <label for="exampleFormControlInput1" class="form-label">Title</label>
+  <input  name='title' class="form-control"  value="{{post.title}}"></input>
+</div>			
+<div class="mb-3 container">
+  <label  for="exampleFormControlTextarea1" class="form-label">Author</label>
+  <input  name='author' class="form-control" id="exampleFormControl" rows="3" value="{{post.author}}"></input>
+</div>
+<div class="mb-3 container">
+  <label  for="exampleFormControlTextarea1" class="form-label">content</label>
+  <textarea name='content' class="form-control" id="exampleFormControlTextarea1" rows="3">{{post.content}}</textarea>
+<input type="submit" value="save" class="btn btn-success my-2 mx-3 "/>
+</form>
+
+
+{% endblock %}
